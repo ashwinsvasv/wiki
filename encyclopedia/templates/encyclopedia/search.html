@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search result
+{% endblock %}
+
+{% block body %}
+    <h1>Results for '{{search}}':</h1>
+
+    
+	{% if listofres|length != 0 %}
+       <ul>
+	{% for res in listofres %}
+		<li><a href="{% url 'encyclopedia:page' res %}">{{res}}</a></li>
+        {% endfor %}
+	</ul>
+		
+	{% else %}
+ <p> 	There are no entries matching the given query </p>
+	{% endif %}
+
+{% endblock %}

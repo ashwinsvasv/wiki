@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+	Success!
+{% endblock %}
+{% block body %}
+	<p>{{message}}</p>
+	{% if title != None %}
+	<a href="{% url 'encyclopedia:page' title %}">Click here to view '{{title}}' page</a></li>
+	{% else %}
+		<a href="{% url 'encyclopedia:index' %}">Click here to view index page.</a></li>
+	{% endif %}
+{% endblock %}
